@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link
+      href="{{ url_for('static', filename='home.css') }}"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/home.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-o9N1j8Mk0XkH6k6z1gLkKQ1QzL5Rj+NQxjv+4Z5Z5mY="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-o9N1j8Mk0XkH6k6z1gLkKQ1QzL5Rj+NQxjv+4Z5Z5mY="
+      crossorigin=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <span class="safe" style="font-size: larger">Safe</span
+          ><span class="drive">Drive</span>
+          <span class="ai">AI</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('predict_form') }}"
+                >Predict</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="image-marquee">
+      <div class="image-track">
+        <img src="/static/images/img1.jpg" alt="Image 1" />
+        <img src="/static/images/img2.jpeg" alt="Image 2" />
+        <img src="/static/images/img3.jpg" alt="Image 3" />
+
+        <img src="/static/images/img4.jpeg" alt="Image 1" />
+        <img src="/static/images/img5.jpg" alt="Image 2" />
+        <img src="/static/images/img6.webp" alt="Image 3" />
+      </div>
+    </div>
+    <div>
+      <section class="safety-section py-5" id="safety">
+        <div class="container">
+          <h2 class="mb-5 text-warning fw-bold text-center">
+            🚧 Road Safety Precautions
+          </h2>
+          <div class="precautions-list">
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-traffic-light"></i></div>
+              <div class="content">
+                <h4>Follow Traffic Rules</h4>
+                <p class="description">Obey signals and speed limits.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-phone-slash"></i></div>
+              <div class="content">
+                <h4>Stay Focused</h4>
+                <p class="description">Avoid phones and distractions.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-helmet-safety"></i></div>
+              <div class="content">
+                <h4>Wear Helmets & Seatbelts</h4>
+                <p class="description">Every ride, every time.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-wine-bottle"></i></div>
+              <div class="content">
+                <h4>Don’t Drink & Drive</h4>
+                <p class="description">Zero tolerance.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-car"></i></div>
+              <div class="content">
+                <h4>Maintain Your Vehicle</h4>
+                <p class="description">Regular check-ups are a must.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon">
+                <i class="fa-solid fa-cloud-showers-heavy"></i>
+              </div>
+              <div class="content">
+                <h4>Drive Carefully in Bad Weather</h4>
+                <p class="description">Slow down and stay alert.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-person-walking"></i></div>
+              <div class="content">
+                <h4>Respect Pedestrians</h4>
+                <p class="description">Stop at crossings.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-bed"></i></div>
+              <div class="content">
+                <h4>Avoid Fatigue</h4>
+                <p class="description">Rest well before driving.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </div>
+              <div class="content">
+                <h4>Use Indicators & Lights</h4>
+                <p class="description">Communicate your moves.</p>
+              </div>
+            </div>
+
+            <div class="precaution-item" tabindex="0">
+              <div class="icon"><i class="fa-solid fa-first-aid"></i></div>
+              <div class="content">
+                <h4>Be Emergency Ready</h4>
+                <p class="description">Carry a kit and know first aid.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: Bar Graph Image -->
+          <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+            <img
+              src="/static/images/AccidentStats.jpg"
+              alt="Accident Statistics"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+
+          <!-- Right: Content -->
+          <div class="col-md-6" data-aos="fade-left">
+            <h3 class="fw-bold text-primary">Accident Statistics Overview</h3>
+            <div class="lead">
+              <p>In 2023, India saw 1.72 lakh road accident deaths.</p>
+              <p>Uttar Pradesh led with nearly 24,000 fatalities.</p>
+              <p>Tamil Nadu and Maharashtra followed with high tolls.</p>
+              <p>
+                These states highlight the urgent need for targeted safety
+                action.
+              </p>
+            </div>
+
+            <ul>
+              <li>Focus on high-density traffic areas</li>
+              <li>Enhance road monitoring and alerts</li>
+              <li>Deploy safety campaigns in vulnerable states</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container py-5" id="age-group-victims">
+      <div class="row align-items-center">
+        <!-- Left Side: Text Content -->
+        <div class="col-md-6" data-aos="fade-right">
+          <h3 class="text-primary fw-bold">
+            Age Group Victims in Road Accidents
+          </h3>
+          <p class="lead">
+            Fatalities among minors rose to 9.5k, while senior deaths climbed to
+            13.6k in 2022.
+          </p>
+          <p class="lead">
+            Ages 18–34 alone accounted for nearly 60% of all accident
+            fatalities.
+          </p>
+          <p class="lead">
+            Effective awareness, stricter driving policies, and targeted
+            interventions for young drivers can significantly reduce this toll.
+          </p>
+        </div>
+
+        <!-- Right Side: Pie Chart Image -->
+        <div class="col-md-6 text-center" data-aos="fade-left">
+          <img
+            src="/static/images/piechart.png"
+            alt="Age Group Pie Chart"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-2">&copy; 2025 SafeDrive AI | All Rights Reserved</p>
+        <p class="mb-2">Developed by Pentaparthi Aravind and Team</p>
+        <div>
+          <a href="https://github.com/yourusername" class="text-white me-3">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="mailto:youremail@example.com" class="text-white me-3">
+            <i class="fas fa-envelope"></i> Contact Us
+          </a>
+          <a href="#top" class="text-white">
+            <i class="fas fa-arrow-up"></i> Back to Top
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="precaution-item" style="transition-delay: 0.5s">
+      <script>
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+          );
+        }
+
+        function revealPrecautions() {
+          document.querySelectorAll(".precaution-item").forEach((item) => {
+            if (isInViewport(item)) {
+              item.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", revealPrecautions);
+        window.addEventListener("load", revealPrecautions);
+      </script>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
