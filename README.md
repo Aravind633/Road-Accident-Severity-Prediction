@@ -1,10 +1,10 @@
-# 🚦 Road Accident Severity Prediction (RASP)
+# Road Accident Severity Prediction
 
 An end-to-end Machine Learning project with a Flask web application that predicts the **severity of road accidents** based on real-world traffic and environmental factors. This project aims to help authorities, transport departments, and drivers understand potential accident severity and take **proactive safety measures**.
 
 ---
 
-## 🧠 Overview
+## Overview
 
 The **Road Accident Severity Prediction System** analyzes multiple parameters like **day of the week, lighting conditions, vehicle type, speed limit, and road conditions** to classify the severity of an accident into one of three categories: _Slight_, _Serious_, or _Fatal_.
 
@@ -12,7 +12,7 @@ The model is built using a supervised learning approach, incorporating data prep
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Predict the **severity of road accidents** using a machine learning model trained on historical data.
 - Develop an **interactive web interface** using Flask for real-time predictions.
@@ -21,7 +21,7 @@ The model is built using a supervised learning approach, incorporating data prep
 
 ---
 
-## ✨ Features
+## Features
 
 - ✅ **End-to-End ML Workflow:** Data cleaning → Model training → Web deployment
 - ✅ **Data Preprocessing:** Handles missing values and encodes categorical variables using `LabelEncoder`
@@ -33,7 +33,7 @@ The model is built using a supervised learning approach, incorporating data prep
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **Languages:** Python, HTML5, CSS3
 - **Libraries & Frameworks:** Flask, Scikit-learn, Pandas, NumPy
@@ -64,13 +64,13 @@ Road-Accident-Severity-Prediction/
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 Follow these steps to set up and run the project on your local machine.
 
 ---
 
-## 🧩 1. Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/Road-Accident-Severity-Prediction.git
@@ -79,7 +79,7 @@ cd Road-Accident-Severity-Prediction
 
 ---
 
-## 🧠 2. Create and Activate a Virtual Environment
+## 2. Create and Activate a Virtual Environment
 
 **On Windows:**
 
@@ -97,7 +97,7 @@ source venv/bin/activate
 
 ---
 
-## 📦 3. Install Dependencies
+## 3. Install Dependencies
 
 Install all required libraries from the `requirements.txt` file:
 
@@ -113,7 +113,7 @@ pip install flask scikit-learn pandas numpy joblib
 
 ---
 
-## 🧮 4. Train the Model
+## 4. Train the Model
 
 Run the training script to process the data and generate the model and encoder files:
 
@@ -124,12 +124,12 @@ python train_model.py
 You should see a confirmation message upon successful completion:
 
 ```
-Model and encoders saved successfully ✅
+Model and encoders saved successfully
 ```
 
 ---
 
-## 🌐 5. Run the Flask Web Application
+## 5. Run the Flask Web Application
 
 Launch the Flask app to start the web server:
 
@@ -139,7 +139,7 @@ python app.py
 
 Then open your web browser and navigate to:
 
-👉 http://127.0.0.1:5000/
+http://127.0.0.1:5000/
 
 You can now input various parameters into the web form to get real-time accident severity predictions.
 
@@ -159,11 +159,11 @@ You can now input various parameters into the web form to get real-time accident
 | Special Conditions   | None (0)               |
 | Number of Passengers | 2                      |
 
-**Predicted Severity:** ✅ Serious
+**Predicted Severity:** Serious
 
 ---
 
-## 💡 Learnings & Conclusion
+## Learnings & Conclusion
 
 ### Learnings
 
@@ -179,17 +179,17 @@ This project demonstrates that machine learning can effectively predict road acc
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
-- 🌤️ **API Integration:** Use live weather and traffic data APIs for dynamic predictions.
-- 🗺️ **Data Visualization:** Add interactive maps to visualize accident-prone zones.
-- ☁️ **Cloud Deployment:** Deploy using Docker on AWS, Heroku, or Render.
-- 🤖 **Advanced Models:** Experiment with XGBoost or Neural Networks for improved accuracy.
-- 🌐 **Multi-language Support:** Add localization options to the web interface.
+- **API Integration:** Use live weather and traffic data APIs for dynamic predictions.
+- **Data Visualization:** Add interactive maps to visualize accident-prone zones.
+- **Cloud Deployment:** Deploy using Docker on AWS, Heroku, or Render.
+- **Advanced Models:** Experiment with XGBoost or Neural Networks for improved accuracy.
+- **Multi-language Support:** Add localization options to the web interface.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Follow these steps:
 
@@ -208,6 +208,6 @@ Contributions are welcome! Follow these steps:
    ```
 5. **Open a Pull Request.**
 
-⭐ If you found this project helpful, don’t forget to give it a star!
+If you found this project helpful, don’t forget to give it a star!
 
 ---
